@@ -1,0 +1,22 @@
+<h3>Create an Account</h3>
+<form class="ui form" (ngSubmit)="submit()" [formGroup]="form">
+  <div class="field">
+    <label for="username">Username</label>
+    <input id="username" type="text" formControlName="username">
+    <div *ngIf="form.get('username').touched && form.get('username').invalid" class="validation">
+      <small *ngIf="form.get('username').errors.required">Enter username</small>
+      <small *ngIf="form.get('username').errors.minlength">User might be longer then 3 charecters</small>
+      <small *ngIf="form.get('username').errors.nonUique">Username alredy exists</small>
+    </div>
+  </div>
+  <div class="field">
+    <label for="password">Password</label>
+    <input id="password" type="text" formControlName="password">
+  </div>
+  <div class="field">
+    <label id="passwordConfirm" for="passwordConfirm">Password Confirmation</label>
+    <input type="text" formControlName="passwordConfirm">
+  </div>
+  <button type="submit" class="button ui  red" [disabled]="form.invalid">Submit</button>
+</form>
+

@@ -1,0 +1,10 @@
+{
+  "/auth": {
+    "target": "https://api.angular-email.com",
+    "secure": true,
+    "pathRewrite": {
+      "^/posts": ""
+    },
+    "changeOrigin": true
+  }
+}
