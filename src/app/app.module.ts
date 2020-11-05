@@ -11,6 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {SharedModule} from './shared/shared.module';
 import {AuthModule} from './auth/auth.module';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {AuthModule} from './auth/auth.module';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
+    MatSlideToggleModule,
     MatIconModule,
     MatCardModule,
     RouterModule,

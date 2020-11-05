@@ -13,6 +13,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class SinginComponent implements OnInit {
   form: FormGroup;
   password = true;
+  errorcounter = 0;
 
   // tslint:disable-next-line:max-line-length
   constructor(private fb: FormBuilder, private passMatch: Passmatch, private uniq: Useruniquie, private auth: AuthService, private router: Router, private active: ActivatedRoute) {
@@ -38,6 +39,9 @@ export class SinginComponent implements OnInit {
     this.auth.singin(sendFrom).subscribe(
       (v) => {
         console.log(v);
+      },
+      (err) => {
+        this.errorcounter++;
       }
     )
   }

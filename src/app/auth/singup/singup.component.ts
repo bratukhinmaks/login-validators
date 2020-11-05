@@ -37,7 +37,12 @@ export class SingupComponent implements OnInit {
     this.auth.singup(sendFrom).subscribe(
       () => {
         this.form.reset();
-        this.router.navigate(['/'], {queryParams: {user: sendFrom.username, password: sendFrom.password }})
+        this.router.navigate(['/'], {queryParams: {user: sendFrom.username, password: sendFrom.password}});
+      },
+      (err) => {
+        if (!err.status) {
+          this.form.setErrors({noConnection: true});
+        }
       }
     );
 

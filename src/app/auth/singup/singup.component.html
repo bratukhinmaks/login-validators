@@ -1,5 +1,5 @@
 <h3>Create an Account</h3>
-<form class="ui form" (ngSubmit)="submit()" [formGroup]="form">
+<form  (ngSubmit)="submit()" [formGroup]="form">
   <app-input [control]="form.get('username')" [label]="'Username'"></app-input>
   <app-input [control]="form.get('password')" [label]="'Password'" [password]="password"></app-input>
   <app-input [control]="form.get('passwordConfirm')" [label]="'Password Confirmation'" [password]="password"></app-input>
@@ -10,7 +10,12 @@
     <input type="checkbox" id="checkbox" (change)="password = !password">
     <label for="checkbox">Show password</label>
   </div>
-  <hr>
-  <button type="submit" class="button ui  red" [disabled]="form.invalid">Submit</button>
+  <div class="form-questions">
+    <a routerLink="/">Alredy have an account? Sign In</a>
+  </div>
+  <div *ngIf="form.get('password').touched && form.get('passwordConfirm').touched && form.errors && form.get('username').touched ">
+    <small *ngIf="form.errors.noConnection">Please check you internet connection and try again</small>
+  </div>
+  <button type="submit" class="form-button" [disabled]="form.invalid">Submit</button>
 </form>
 
