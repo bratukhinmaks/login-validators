@@ -1,0 +1,12 @@
+<div class="field">
+  <label for="username">{{label}}</label>
+  <input id="username" [type]="password ? 'password' : 'text'" [formControl]="control">
+  <div *ngIf="control.touched && control.invalid" class="validation">
+    <small *ngIf="control.errors.required">This field is requiered</small>
+    <small *ngIf="control.errors.minlength">Field might be longer then 3 charecters</small>
+    <small *ngIf="control.errors.maxlength">Field might be no longer then 20 charecters</small>
+    <small *ngIf="control.errors.nonUique">Username alredy exists</small>
+    <small *ngIf="control.errors.pattern">Only can includes a-z and 0-9 characters</small>
+    <small *ngIf="control.errors.noConnection">No internet connection</small>
+  </div>
+</div>

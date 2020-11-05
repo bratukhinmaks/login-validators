@@ -1,22 +1,16 @@
 <h3>Create an Account</h3>
 <form class="ui form" (ngSubmit)="submit()" [formGroup]="form">
-  <div class="field">
-    <label for="username">Username</label>
-    <input id="username" type="text" formControlName="username">
-    <div *ngIf="form.get('username').touched && form.get('username').invalid" class="validation">
-      <small *ngIf="form.get('username').errors.required">Enter username</small>
-      <small *ngIf="form.get('username').errors.minlength">User might be longer then 3 charecters</small>
-      <small *ngIf="form.get('username').errors.nonUique">Username alredy exists</small>
-    </div>
+  <app-input [control]="form.get('username')" [label]="'Username'"></app-input>
+  <app-input [control]="form.get('password')" [label]="'Password'" [password]="password"></app-input>
+  <app-input [control]="form.get('passwordConfirm')" [label]="'Password Confirmation'" [password]="password"></app-input>
+  <div *ngIf="form.get('password').touched && form.get('passwordConfirm').touched && form.errors ">
+    <small *ngIf="form.errors.passDontMatch"> Confirmation password doesnt match Password</small>
   </div>
-  <div class="field">
-    <label for="password">Password</label>
-    <input id="password" type="text" formControlName="password">
+  <div class="ui checkbox">
+    <input type="checkbox" id="checkbox" (change)="password = !password">
+    <label for="checkbox">Show password</label>
   </div>
-  <div class="field">
-    <label id="passwordConfirm" for="passwordConfirm">Password Confirmation</label>
-    <input type="text" formControlName="passwordConfirm">
-  </div>
+  <hr>
   <button type="submit" class="button ui  red" [disabled]="form.invalid">Submit</button>
 </form>
 

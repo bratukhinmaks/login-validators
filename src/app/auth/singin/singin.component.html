@@ -1,1 +1,11 @@
-<p>singin works!</p>
+<h3>Login to account</h3>
+<form class="ui form" (ngSubmit)="submit()" [formGroup]="form">
+  <app-input [control]="form.get('username')" [label]="'Username'"></app-input>
+  <app-input [control]="form.get('password')" [label]="'Password'" [password]="password"></app-input>
+  <div class="ui checkbox">
+    <input type="checkbox" id="checkbox" (change)="password = !password">
+    <label for="checkbox">Show password</label>
+  </div>
+  <hr>
+  <button type="submit" class="button ui  red" [disabled]="form.invalid">Submit</button>
+</form>

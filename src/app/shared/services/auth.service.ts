@@ -12,6 +12,14 @@ export class AuthService {
   }
 
   usernameCheck(username: string): Observable<any> {
-    return this.http.post(`${environment.baseUrl}/auth/username`, {username: username});
+    return this.http.post(`${environment.baseUrl}/auth/username`, { username});
+  }
+
+  singup(form): Observable<any> {
+    return this.http.post(`${environment.baseUrl}/auth/signup`, form);
+  }
+
+  singin(form): Observable<any> {
+    return this.http.post(`${environment.baseUrl}/auth/signin`, form);
   }
 }
