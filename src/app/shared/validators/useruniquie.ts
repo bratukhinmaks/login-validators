@@ -1,9 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {AsyncValidator, FormControl, ValidationErrors} from '@angular/forms';
-import {Observable, of, throwError} from 'rxjs';
-import {environment} from '../../../environments/environment';
-import {catchError, debounce, debounceTime, map, throttleTime} from 'rxjs/operators';
+import {Observable, of} from 'rxjs';
+import {catchError, debounceTime, map, throttleTime} from 'rxjs/operators';
 import {AuthService} from '../services/auth.service';
 
 @Injectable({providedIn: 'root'})

@@ -16,7 +16,7 @@ html.light{
   --text-main: #0f0f40;
   --text-secondary: #ef5e10;
   --background: #fbfbfc;
-  --neon-border: #EBEFF0;
+  --neon-border: #343737;
 }
 
 html, body{
@@ -27,6 +27,9 @@ form {
   width: 50%;
   text-align: center;
   margin: 100px auto;
+  padding: 20px 30px;
+  border: 2px solid var(--neon-border);
+  border-radius: 8px;
 }
 
 form small {
@@ -43,15 +46,47 @@ form small {
  background: transparent;
 }
 
-.form-input input {
+.form-button.disabled{
+  color: black;
+  background-color: grey;
+  border: black;
+}
+
+.form-input input,select {
   background: transparent ;
   border: 2px var(--yellow) solid;
-  width: 80%;
-  padding: 10px 10px;
-  margin: 0 auto;
+  width: 95%;
+  padding: 10px 15px;
+  margin: 15px auto;
+  color:  var(--text-main);
 }
+
+
 
 .form-input {
   display: flex;
   flex-direction: column;
+}
+
+.form-input label {
+  font-size: 18px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.checkbox-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-area .checkbox{
+  margin: 10px 0;
+}
+
+.checkbox-area label {
+  text-align: left;
+  color:  var(--text-main) !important;
 }

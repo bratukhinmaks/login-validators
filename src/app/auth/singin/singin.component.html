@@ -1,5 +1,6 @@
-<h3>Login to account</h3>
+
 <form  (ngSubmit)="submit()" [formGroup]="form">
+  <h3>Login to account</h3>
   <app-input [control]="form.get('username')" [label]="'Username'"></app-input>
   <app-input [control]="form.get('password')" [label]="'Password'" [password]="password"></app-input>
   <div class="ui checkbox">
