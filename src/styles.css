@@ -90,3 +90,9 @@ form small {
   text-align: left;
   color:  var(--text-main) !important;
 }
+
+@media screen and (max-width:992px) {
+  form {
+    width: 90%;
+  }
+}
