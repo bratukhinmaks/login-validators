@@ -1,0 +1,23 @@
+<nav>
+  <div class="nav-bar-inner">
+    <div class="navbar-brand">
+      <h3>Email App</h3>
+    </div>
+    <div class="navbar-toggle">
+      <mat-slide-toggle (click)="changeMode()">{{dark ? 'Dark Mode' : 'Day Mode'}}</mat-slide-toggle>
+    </div>
+    <div class="navbar-items">
+        <ng-container *ngIf="!this.auth.loggedIn; else logout">
+          <div class="navbar-item" routerLink="/signup" routerLinkActive="active">Sign Up</div>
+          <div class="navbar-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Sign In</div>
+        </ng-container>
+        <ng-template #logout>
+          <li class="navbar-item" routerLinkActive="active" routerLink="/inbox" >Inbox</li>
+          <li (click)="logOut()" class="navbar-item" routerLinkActive="active">Log Out</li>
+        </ng-template>
+    </div>
+  </div>
+
+</nav>
+
+

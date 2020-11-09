@@ -1,22 +1,25 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from './shared/services/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'rxjs';
-  dark = true;
 
-  changeMode() {
-    this.dark = !this.dark;
-    if (this.dark) {
-      document.getElementsByTagName('html')[0].classList.remove('light');
-      document.getElementsByTagName('html')[0].classList.add('dark');
-    } else {
-      document.getElementsByTagName('html')[0].classList.remove('dark');
-      document.getElementsByTagName('html')[0].classList.add('light');
-    }
+  constructor(private auth: AuthService, private router: Router) {
+  }
+
+  ngOnInit() {
+    this.auth.isSingedIn().subscribe(
+      (res) => {
+        console.log(res);
+        this.auth.loggedIn = res.authenticated;
+        this.router.navigate(['/inbox']);
+      }
+    );
   }
 }

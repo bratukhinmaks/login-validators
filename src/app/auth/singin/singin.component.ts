@@ -39,6 +39,9 @@ export class SinginComponent implements OnInit {
     this.auth.singin(sendFrom).subscribe(
       (v) => {
         console.log(v);
+        this.auth.loggedIn = true;
+        this.form.reset();
+        this.router.navigate(['/inbox']);
       },
       (err) => {
         this.errorcounter++;

@@ -3,53 +3,7 @@
   <app-input [control]="form.get('username')" [label]="'Login'"></app-input>
   <app-input [control]="form.get('password')" [label]="'Password'" [password]="password"></app-input>
   <app-input [control]="form.get('passwordConfirm')" [label]="'Password Confirmation'" [password]="password"></app-input>
-  <app-input [control]="form.get('name')" [label]="'Imie'"></app-input>
-  <app-input [control]="form.get('surname')" [label]="'Nazwisko'" ></app-input>
-  <div class="form-input">
-    <label >Płec</label>
-    <select formControlName="postCode" autocomplete="off">
-      <option value="male">Miezczyzna</option>
-      <option value="female">Kobieta</option>
-    </select>
-    <div *ngIf="form.get('postCode').touched && form.get('postCode').invalid" class="validation">
-      <small *ngIf="form.get('postCode').errors.required">This field is requiered</small>
-    </div>
-  </div>
-  <app-input [control]="form.get('address')" [label]="'Adress'" ></app-input>
-  <app-input [control]="form.get('state')" [label]="'Wojewodstwo'" ></app-input>
-  <app-input [control]="form.get('city')" [label]="'Miasto'" ></app-input>
-  <div class="form-input">
-    <label >Kod Pocztowy</label>
-    <input [mask]="'99-999'" formControlName="postCode" autocomplete="off">
-    <div *ngIf="form.get('postCode').touched && form.get('postCode').invalid" class="validation">
-      <small *ngIf="form.get('postCode').errors.required">This field is requiered</small>
-    </div>
-  </div>
-  <div class="form-input">
-    <label >Telefon</label>
-    <input prefix="+48" [mask]="'(000) 000-000'" formControlName="phone" autocomplete="off">
-    <div *ngIf="form.get('phone').touched && form.get('phone').invalid" class="validation">
-      <small *ngIf="form.get('phone').errors.required">This field is requiered</small>
-    </div>
-  </div>
-  <app-input [control]="form.get('mail')" [label]="'Email'" ></app-input>
-  <app-input [control]="form.get('phone')" [label]="'Telefon'" ></app-input>
-  <app-input [control]="form.get('pesel')" [label]="'Pesel'" ></app-input>
   <div class="checkbox-area">
-    <div class="ui checkbox">
-      <input type="checkbox" formControlName="condition1" >
-      <label >Wyrażam zgodę na przetwarzanie danych</label>
-      <div *ngIf="form.get('condition1').touched && form.get('condition1').invalid" class="validation">
-        <small *ngIf="form.get('condition1').errors.required">This field is requiered</small>
-      </div>
-    </div>
-    <div class="ui checkbox">
-      <input type="checkbox" formControlName="condition2">
-      <label >Wyrażam zgodę na przesyłanie reklam</label>
-      <div *ngIf="form.get('condition2').touched && form.get('condition2').invalid" class="validation">
-        <small *ngIf="form.get('condition2').errors.required">This field is requiered</small>
-      </div>
-    </div>
     <div *ngIf="form.get('password').touched && form.get('passwordConfirm').touched && form.errors ">
       <small *ngIf="form.errors.passDontMatch"> Confirmation password doesnt match Password</small>
     </div>

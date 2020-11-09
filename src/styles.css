@@ -53,7 +53,7 @@ form small {
 }
 
 .form-input input,select {
-  background: transparent ;
+  background: transparent !important;
   border: 2px var(--yellow) solid;
   width: 95%;
   padding: 10px 15px;
@@ -90,6 +90,65 @@ form small {
   text-align: left;
   color:  var(--text-main) !important;
 }
+nav {
+  width: 100%;
+  background-color: transparent;
+  box-shadow: 0 2px 4px var(--text-secondary);
+}
+
+.nav-bar-inner {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--text-main);
+  padding: 20px 5px;
+  align-items: center;
+}
+
+.navbar-items  {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.navbar-item {
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.navbar-brand h3 {
+  font-size: 20px;
+}
+.mat-slide-toggle-label {
+  flex-direction: column !important;
+  align-items: center;
+  height: auto !important;
+  cursor: pointer;
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #ffc440 !important;
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: rgba(92, 197, 248, 0.54) !important;
+}
+
+.mat-slide-toggle .mat-slide-toggle-thumb {
+  background-color: snow !important;
+}
+.mat-slide-toggle .mat-slide-toggle-bar {
+  background-color: #6161c4 !important;
+}
+
+.navbar-item.active {
+  color: var(--text-secondary) !important;
+}
+
+.navbar-item:focus {
+  outline: none;
+}
+
 
 @media screen and (max-width:992px) {
   form {
