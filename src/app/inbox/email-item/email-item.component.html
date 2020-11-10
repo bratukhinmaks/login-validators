@@ -1,0 +1,4 @@
+<div *ngIf="mail$ | async as mail">
+  <h2>{{mail.subject}}</h2>
+  <p>{{mail.from}}</p>
+</div>

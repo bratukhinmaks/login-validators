@@ -149,6 +149,49 @@ nav {
   outline: none;
 }
 
+.mail-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.mail-container .left-column {
+  width: 45%;
+}
+
+.mail-container .right-column {
+  width: 55%;
+}
+
+.email-item {
+  border-bottom: 1px solid var(--neon-border);
+  margin: 10px 5px;
+  padding: 10px 15px;
+  transition: 0.5s all ease-in-out;
+}
+
+.email-item:hover {
+  border-bottom: none;
+  box-shadow: 0 12px 10px -6px var(--pink);
+  transition: 0.5s all ease-in-out;
+}
+.email-item:focus {
+ outline: none;
+  border-bottom: none;
+  box-shadow: 0 12px 10px -6px var(--pink);
+}
+
+.email-title {
+  color: var(--text-secondary);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.email-description {
+  font-size: 15px;
+}
 
 @media screen and (max-width:992px) {
   form {

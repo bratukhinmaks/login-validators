@@ -1,0 +1,9 @@
+<div *ngIf="emails$ | async as emails" class="ui celled list">
+  <div *ngFor="let mail of emails" class="email-item" [routerLink]="['/inbox',mail.id]">
+    <div class="content">
+      <h4 class="email-title">Subject: {{mail.subject}}</h4>
+      <p class="email-description">From: {{mail.from}}</p>
+    </div>
+
+  </div>
+</div>

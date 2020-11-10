@@ -7,6 +7,10 @@
     <input type="checkbox" id="checkbox" (change)="password = !password">
     <label for="checkbox">Show password</label>
   </div>
+  <div *ngIf="form.get('password').touched && form.errors && form.get('username').touched ">
+    <small *ngIf="form.errors.novalidPassword">Password is not valid, try again</small>
+    <small *ngIf="form.errors.novalidUser">Can not find user</small>
+  </div>
   <div class="form-questions">
     <a routerLink="/signup">Create new ?</a>
     <a *ngIf="errorcounter>1">Forgot password?</a>

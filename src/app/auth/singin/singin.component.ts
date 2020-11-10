@@ -44,7 +44,11 @@ export class SinginComponent implements OnInit {
         this.router.navigate(['/inbox']);
       },
       (err) => {
-        this.errorcounter++;
+        if(err.error.password) {
+          this.form.setErrors({novalidPassword: true})
+        } else if (err.error.username) {
+          this.form.setErrors({novalidUser: true})
+        }
       }
     )
   }
