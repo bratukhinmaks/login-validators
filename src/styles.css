@@ -172,6 +172,14 @@ nav {
   transition: 0.5s all ease-in-out;
 }
 
+.ui.icon.header {
+  color: var(--text-main)
+}
+.ui.placeholder.segment {
+  background-color: transparent;
+  border: none;
+}
+
 .email-item:hover {
   border-bottom: none;
   box-shadow: 0 12px 10px -6px var(--pink);

@@ -10,11 +10,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import { ModalComponent } from './components/modal/modal.component';
 
 const components = [
   InputComponent,
   MainLayoutComponent,
-  NavComponent
+  NavComponent,
+  ModalComponent
 ];
 const moduls = [
   CommonModule,

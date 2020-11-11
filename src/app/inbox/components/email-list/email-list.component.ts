@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {EmailService} from '../shared/services/email.service';
+import {EmailService} from '../../shared/services/email.service';
 import {Observable} from 'rxjs';
 
 @Component({

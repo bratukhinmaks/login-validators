@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.auth.isSingedIn().subscribe(
       (res) => {
-        console.log(res);
         this.auth.loggedIn = res.authenticated;
         this.router.navigate(['/inbox']);
       }

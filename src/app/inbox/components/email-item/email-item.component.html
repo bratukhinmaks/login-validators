@@ -1,0 +1,15 @@
+<div  *ngIf="mail$ | async as mail">
+  <div class="header">
+    <div>
+      <h3>Subject: {{mail.subject}}</h3>
+      <div>
+        From: <i>{{mail.from}}</i>
+      </div>
+      <div>
+        To: <i>{{mail.to}}</i>
+      </div>
+    </div>
+  </div>
+  <div class="ui divider"></div>
+  <div [innerHTML]="mail.html"></div>
+</div>
