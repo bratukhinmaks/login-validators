@@ -1,0 +1,8 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" >
+  <h3 *ngIf="mailSend">Mail has been successfully sended</h3>
+  <app-input [control]="form.get('from')" [label]="'From'"></app-input>
+  <app-input [control]="form.get('to')" [label]="'To'"></app-input>
+  <app-input [control]="form.get('subject')" [label]="'Subject'"></app-input>
+  <app-input [control]="form.get('text')" [label]="'Text'" controlType="textarea"></app-input>
+  <div ><button class="ui primary inverted button" type="submit">Submit</button></div>
+</form>

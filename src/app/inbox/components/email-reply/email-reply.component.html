@@ -1,1 +1,8 @@
-<p>email-reply works!</p>
+<button class="ui purple fluid inverted button" (click)="isVisible = !isVisible">Reply</button>
+<app-modal (close)="isVisible = !isVisible" *ngIf="isVisible">
+  <div modalTitle>Reply</div>
+  <div>
+    <app-email-form (emailsubmit)="onSubmit($event)" [email]="email"></app-email-form>
+  </div>
+</app-modal>
+

@@ -52,7 +52,7 @@ form small {
   border: black;
 }
 
-.form-input input,select {
+.form-input input,select, textarea {
   background: transparent !important;
   border: 2px var(--yellow) solid;
   width: 95%;
@@ -179,6 +179,17 @@ nav {
   background-color: transparent;
   border: none;
 }
+.ui.modal.visible.active {
+  background-color: var(--background);
+}
+.ui.modal.visible.active .header, .content, .actions {
+  background-color: var(--background) !important;
+}
+
+.ui.modal.visible.active .header {
+  color: var(--text-main);
+  border-bottom: 1px solid rgb(52 102 152);
+}
 
 .email-item:hover {
   border-bottom: none;
@@ -199,6 +210,10 @@ nav {
 
 .email-description {
   font-size: 15px;
+}
+
+app-email-form form app-input .form-input label {
+  text-align: left ;
 }
 
 @media screen and (max-width:992px) {

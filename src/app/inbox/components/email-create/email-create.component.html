@@ -1,1 +1,7 @@
-<p>email-create works!</p>
+<button class="ui violet fluid inverted button" (click)="isVisible = !isVisible">Compose</button>
+<app-modal (close)="isVisible = !isVisible" *ngIf="isVisible">
+  <div modalTitle>Compose</div>
+  <div>
+  <app-email-form (emailsubmit)="onSubmit($event)" [email]="email"></app-email-form>
+  </div>
+</app-modal>

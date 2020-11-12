@@ -10,6 +10,7 @@ export class InputComponent implements OnInit {
   @Input() control: AbstractControl;
   @Input() label: string;
   @Input() password: boolean;
+  @Input() controlType = 'input';
 
   constructor() {
   }
