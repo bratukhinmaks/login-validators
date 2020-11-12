@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {AuthService} from '../../../shared/services/auth.service';
 import {EmailService} from '../../shared/services/email.service';
 
@@ -7,14 +7,14 @@ import {EmailService} from '../../shared/services/email.service';
   templateUrl: './email-reply.component.html',
   styleUrls: ['./email-reply.component.css']
 })
-export class EmailReplyComponent implements OnInit {
+export class EmailReplyComponent implements OnInit, OnChanges {
   isVisible = false;
   @Input() email;
 
   constructor(private auth: AuthService, private sendServ: EmailService) {
   }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     this.email = {
       ...this.email,
       from: this.email.to,
